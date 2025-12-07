@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "npx tailwindcss -i ./input.css -o ./dist/styles.css --minify",
-    "build": "node build.js",
+    "build": "node build.js && npm run build-css",
     "start": "http-server dist"
   },
   "keywords": [],
