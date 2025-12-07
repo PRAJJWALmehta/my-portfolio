@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prajjwal - Portfolio</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-300">
+
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/70 border-b border-gray-200 dark:bg-slate-950/70 dark:border-slate-800">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex justify-between items-center">
+            <span class="font-bold text-xl tracking-tight dark:text-white">My Portfolio</span>
+            <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 transition-all text-xl">
+                🌙
+            </button>
+        </div>
+    </nav>
+
+    <header class="max-w-4xl mx-auto py-20 px-6 text-center md:text-left">
+        <p class="text-blue-600 dark:text-blue-400 font-medium mb-2 tracking-wide uppercase text-sm">Hi, my name is</p>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight">
+            Prajjwal.
+        </h1>
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-500 dark:text-slate-400 mb-6">
+            Software Engineer
+        </h2>
+        <p class="max-w-xl text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8">
+            I build systems that are easy to extend and hard to break.<br>
+            I transition code from <b>it works</b> to <b>it scales</b><br>
+        </p>
+        <div class="inline-block h-1 w-20 bg-blue-600 rounded-full"></div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 pb-20 space-y-24">
+
+        <section>
+            <h2 class="flex items-center text-2xl font-bold text-slate-900 dark:text-white mb-8">
+                <span class="text-blue-600 dark:text-blue-400 mr-2">01.</span> Experience
+                <span class="ml-4 h-px bg-slate-200 dark:bg-slate-700 flex-grow max-w-xs"></span>
+            </h2>
+
+            <div class="space-y-12 border-l-2 border-slate-200 dark:border-slate-800 ml-3 pl-8 relative">
+                
+                    <div class="relative group">
+                        <div class="absolute -left-[39px] top-1 h-5 w-5 rounded-full border-4 border-white dark:border-slate-950 bg-blue-600 dark:bg-blue-500"></div>
+                        
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                Software Engineer I 
+                                <span class="text-blue-600 dark:text-blue-400">@ JPMorgan Chase</span>
+                            </h3>
+                            <span class="text-sm font-mono text-slate-500 dark:text-slate-400 whitespace-nowrap mt-1 sm:mt-0">
+                                2024-07 – Present
+                            </span>
+                        </div>
+                        
+                        <ul class="list-disc list-outside ml-4 space-y-2 text-slate-600 dark:text-slate-400 leading-relaxed">
+                            
+                                <li class="pl-2">Engineered &#39;Auto Task Creation&#39; workflow using Kafka Pub-Sub, decoupling task generation and increasing throughput.</li>
+                            
+                                <li class="pl-2">Pioneered Consumer-Driven Bidirectional Contract Testing (using Pact &amp; Pactflow.UI) to prevent integration drift.</li>
+                            
+                                <li class="pl-2">Integrated Dynatrace for observability and executed rightsizing, reducing cloud infrastructure costs by ~15%.</li>
+                            
+                        </ul>
+                    </div>
+                
+                    <div class="relative group">
+                        <div class="absolute -left-[39px] top-1 h-5 w-5 rounded-full border-4 border-white dark:border-slate-950 bg-blue-600 dark:bg-blue-500"></div>
+                        
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                Summer Analyst Intern 
+                                <span class="text-blue-600 dark:text-blue-400">@ JPMorgan Chase</span>
+                            </h3>
+                            <span class="text-sm font-mono text-slate-500 dark:text-slate-400 whitespace-nowrap mt-1 sm:mt-0">
+                                2023-06 – 2023-07
+                            </span>
+                        </div>
+                        
+                        <ul class="list-disc list-outside ml-4 space-y-2 text-slate-600 dark:text-slate-400 leading-relaxed">
+                            
+                                <li class="pl-2">Engineered Data Fetching Service using GraphQL and DAGs.</li>
+                            
+                                <li class="pl-2">Reduced complex query latency from 900ms to 10ms (98% reduction) via node-level caching.</li>
+                            
+                                <li class="pl-2">Built an internal debugging dashboard to reduce root-cause analysis time.</li>
+                            
+                        </ul>
+                    </div>
+                
+                    <div class="relative group">
+                        <div class="absolute -left-[39px] top-1 h-5 w-5 rounded-full border-4 border-white dark:border-slate-950 bg-blue-600 dark:bg-blue-500"></div>
+                        
+                        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                Tech Lead &amp; Design Head 
+                                <span class="text-blue-600 dark:text-blue-400">@ Entrepreneurship Development Cell</span>
+                            </h3>
+                            <span class="text-sm font-mono text-slate-500 dark:text-slate-400 whitespace-nowrap mt-1 sm:mt-0">
+                                2022 – 2024
+                            </span>
+                        </div>
+                        
+                        <ul class="list-disc list-outside ml-4 space-y-2 text-slate-600 dark:text-slate-400 leading-relaxed">
+                            
+                                <li class="pl-2">Led digital presence for &#39;Pitchverse&#39;, optimizing image assets for faster load speeds.</li>
+                            
+                                <li class="pl-2">Managed a team of 5 designers/developers for marketing assets.</li>
+                            
+                        </ul>
+                    </div>
+                
+            </div>
+        </section>
+
+        <section>
+            <h2 class="flex items-center text-2xl font-bold text-slate-900 dark:text-white mb-8">
+                <span class="text-blue-600 dark:text-blue-400 mr-2">02.</span> Projects
+                <span class="ml-4 h-px bg-slate-200 dark:bg-slate-700 flex-grow max-w-xs"></span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                    <a href="https://github.com/PRAJJWALmehta/Machine-Learning-/tree/main/Covid-19%20detection%20from%20X-ray%20images%20using%20ResNet-18" class="group block p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 dark:border-slate-800">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                Covid-19 X-Ray Pipeline
+                            </h3>
+                            <span class="text-slate-400 dark:text-slate-500 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                                ↗
+                            </span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm leading-relaxed">
+                            Built an automated image classification pipeline with data augmentation.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            
+                                <span class="text-xs font-mono text-blue-700 bg-blue-50 dark:text-blue-300 dark:bg-blue-900/30 px-2 py-1 rounded">
+                                    Python
+                                </span>
+                            
+                                <span class="text-xs font-mono text-blue-700 bg-blue-50 dark:text-blue-300 dark:bg-blue-900/30 px-2 py-1 rounded">
+                                    PyTorch
+                                </span>
+                            
+                                <span class="text-xs font-mono text-blue-700 bg-blue-50 dark:text-blue-300 dark:bg-blue-900/30 px-2 py-1 rounded">
+                                    ResNet-18
+                                </span>
+                            
+                        </div>
+                    </a>
+                
+                    <a href="https://github.com/PRAJJWALmehta/portfolio" class="group block p-6 bg-white dark:bg-slate-900 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 dark:border-slate-800">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                Custom Static Site Generator
+                            </h3>
+                            <span class="text-slate-400 dark:text-slate-500 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                                ↗
+                            </span>
+                        </div>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 text-sm leading-relaxed">
+                            Built a custom static site generator from scratch to render this portfolio. Engineered a build pipeline using Node.js to parse YAML data and render EJS templates. Implemented a custom responsive design system with Tailwind CSS, featuring a persistent dark mode toggle and glassmorphism UI.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            
+                                <span class="text-xs font-mono text-blue-700 bg-blue-50 dark:text-blue-300 dark:bg-blue-900/30 px-2 py-1 rounded">
+                                    Node.js
+                                </span>
+                            
+                                <span class="text-xs font-mono text-blue-700 bg-blue-50 dark:text-blue-300 dark:bg-blue-900/30 px-2 py-1 rounded">
+                                    EJS
+                                </span>
+                            
+                                <span class="text-xs font-mono text-blue-700 bg-blue-50 dark:text-blue-300 dark:bg-blue-900/30 px-2 py-1 rounded">
+                                    Tailwind CSS
+                                </span>
+                            
+                                <span class="text-xs font-mono text-blue-700 bg-blue-50 dark:text-blue-300 dark:bg-blue-900/30 px-2 py-1 rounded">
+                                    CI/CD
+                                </span>
+                            
+                        </div>
+                    </a>
+                
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <section>
+                <h2 class="flex items-center text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                    <span class="text-blue-600 dark:text-blue-400 mr-2">03.</span> Education
+                </h2>
+                <div class="space-y-6">
+                    
+                        <div class="border-l-2 border-blue-600 pl-4">
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Thapar Institute of Engineering and Technology</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm">B.E. in Computer Science</p>
+                            <p class="text-slate-500 dark:text-slate-500 text-xs mt-1 font-mono">
+                                2020 – 2024
+                            </p>
+                            <p class="text-blue-600 dark:text-blue-400 text-sm font-bold mt-2">CGPA: 9.44/10.0</p>
+                        </div>
+                    
+                </div>
+            </section>
+
+            <section>
+                <h2 class="flex items-center text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                    <span class="text-blue-600 dark:text-blue-400 mr-2">04.</span> Skills
+                </h2>
+                <div class="space-y-6">
+                    
+                        <div>
+                            <h4 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
+                                Languages
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        Java
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        C++
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        JavaScript (ES6+)
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        Python
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        SQL
+                                    </span>
+                                
+                            </div>
+                        </div>
+                    
+                        <div>
+                            <h4 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
+                                Frameworks
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        Spring Boot
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        React.js
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        Node.js
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        Express
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        NextJS
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        GraphQL
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        Tailwind CSS
+                                    </span>
+                                
+                            </div>
+                        </div>
+                    
+                        <div>
+                            <h4 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
+                                Infrastructure
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        Git
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        Docker
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        AWS
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        MongoDB
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        PostgreSQL
+                                    </span>
+                                
+                            </div>
+                        </div>
+                    
+                        <div>
+                            <h4 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
+                                Concepts
+                            </h4>
+                            <div class="flex flex-wrap gap-2">
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        Data Structures
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        Algorithms
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        OOP
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        REST APIs
+                                    </span>
+                                
+                                    <span class="px-3 py-1 text-sm bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-400 transition-colors cursor-default">
+                                        System Design
+                                    </span>
+                                
+                            </div>
+                        </div>
+                    
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer class="text-center py-8 text-slate-500 dark:text-slate-600 text-sm font-mono">
+        <p>Designed & Built by Prajjwal</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

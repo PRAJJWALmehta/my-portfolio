@@ -9,4 +9,9 @@ const template = fs.readFileSync("views/template.ejs", "utf8");
 
 const htmlOutput = ejs.render(template, data);
 
-fs.writeFileSync("index.html", htmlOutput);
+const outputDir = "dist";
+if (!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir);
+}
+
+fs.writeFileSync(`${outputDir}/index.html`, htmlOutput);
