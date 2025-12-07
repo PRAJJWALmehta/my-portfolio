@@ -22,17 +22,16 @@ education:
     score: "9.44/10.0"
 
 work:
-  - company: "JP Morgan Chase"
-    position: "SDE-1"
+  - company: "JPMorgan Chase"
+    position: "Software Engineer I"
     startDate: "2024-07"
     endDate: "Present"
     highlights:
-      - "Developed 'Auto Task Creation' workflow using Kafka Pub-Sub to decouple task generation."
-      - "Pioneered Consumer-Driven Bidirectional Contract Testing to prevent integration drift."
-      - "Integrated Dynatrace for observability and executed rightsizing, reducing cloud costs by ~15%."
-      - "Enhanced stability with SmartSpec test suites and executed Spring Boot upgrades."
+      - "Engineered 'Auto Task Creation' workflow using Kafka Pub-Sub, decoupling task generation and increasing throughput."
+      - "Pioneered Consumer-Driven Bidirectional Contract Testing (using Pact & Pactflow.UI) to prevent integration drift."
+      - "Integrated Dynatrace for observability and executed rightsizing, reducing cloud infrastructure costs by ~15%."
 
-  - company: "JP Morgan & Chase"
+  - company: "JPMorgan Chase"
     position: "Summer Analyst Intern"
     startDate: "2023-06"
     endDate: "2023-07"
@@ -50,24 +49,36 @@ work:
       - "Managed a team of 5 designers/developers for marketing assets."
 
 projects:
-  - name: "E-Commerce Backend & Payments"
-    url: "https://github.com/PRAJJWALmehta/WebDev"
-    keywords: ["MERN Stack", "Stripe API", "Redis"]
-    description: "Designed a scalable architecture with JWT auth and normalized MongoDB schemas."
-
   - name: "Covid-19 X-Ray Pipeline"
-    url: "https://github.com/PRAJJWALmehta/Machine-Learning-"
+    url: "https://github.com/PRAJJWALmehta/Machine-Learning-/tree/main/Covid-19%20detection%20from%20X-ray%20images%20using%20ResNet-18"
     keywords: ["Python", "PyTorch", "ResNet-18"]
     description: "Built an automated image classification pipeline with data augmentation."
+
+  - name: Custom Static Site Generator
+    description: Built a custom static site generator from scratch to render this portfolio. Engineered a build pipeline using Node.js to parse YAML data and render EJS templates. Implemented a custom responsive design system with Tailwind CSS, featuring a persistent dark mode toggle and glassmorphism UI.
+    url: https://github.com/PRAJJWALmehta/portfolio
+    keywords:
+      - Node.js
+      - EJS
+      - Tailwind CSS
+      - CI/CD
 
 skills:
   - name: "Languages"
     keywords: ["Java", "C++", "JavaScript (ES6+)", "Python", "SQL"]
   - name: "Frameworks"
     keywords:
-      ["Spring Boot", "React.js", "Node.js", "Express", "NextJS", "GraphQL"]
+      [
+        "Spring Boot",
+        "React.js",
+        "Node.js",
+        "Express",
+        "NextJS",
+        "GraphQL",
+        "Tailwind CSS",
+      ]
   - name: "Infrastructure"
-    keywords: ["Git", "Docker", "AWS (Basics)", "MongoDB", "PostgreSQL"]
+    keywords: ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL"]
   - name: "Concepts"
     keywords:
       ["Data Structures", "Algorithms", "OOP", "REST APIs", "System Design"]
