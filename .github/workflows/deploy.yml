@@ -29,11 +29,14 @@ jobs:
           node-version: "20"
           cache: "npm"
 
+      - name: Fix PATH for local executables
+        run: echo "::add-path::$(npm bin)"
+
       - name: Install dependencies and Build Site
         run: |
           npm install
-          npm exec -- node build.js
-          npm exec -- tailwindcss -i ./input.css -o ./dist/styles.css --minify
+          node build.js 
+          tailwindcss -i ./input.css -o ./dist/styles.css --minify
         env:
           NODE_ENV: production
 
