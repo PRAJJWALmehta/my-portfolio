@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "npm exec tailwindcss -- -i ./input.css -o ./dist/styles.css --minify",
-    "build": "node build.js && npm run build-css", 
+    "build-css": "./node_modules/.bin/tailwindcss -i ./input.css -o ./dist/styles.css --minify",
+    "build": "node build.js && npm run build-css",
     "start": "http-server dist"
   },
   "keywords": [],
