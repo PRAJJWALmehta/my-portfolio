@@ -32,7 +32,8 @@ jobs:
       - name: Install dependencies and Build Site
         run: |
           npm install
-          npm run build
+          npm exec -- node build.js
+          npm exec -- tailwindcss -i ./input.css -o ./dist/styles.css --minify
         env:
           NODE_ENV: production
 
