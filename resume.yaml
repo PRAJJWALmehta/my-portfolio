@@ -1,0 +1,73 @@
+basics:
+  name: "Prajjwal Mehta"
+  label: "Software Engineer"
+  email: "prajjwalmehta75@gmail.com"
+  phone: "+91 8851975249"
+  url: "https://prajjwalmehta.github.io" # Placeholder for your future site
+  location: "Bengaluru, India"
+  profiles:
+    - network: "LinkedIn"
+      username: "prajjwalmehta"
+      url: "https://www.linkedin.com/in/prajjwalmehta"
+    - network: "GitHub"
+      username: "PRAJJWALmehta"
+      url: "https://github.com/PRAJJWALmehta"
+
+education:
+  - institution: "Thapar Institute of Engineering and Technology"
+    area: "Computer Science"
+    studyType: "B.E."
+    startDate: "2020"
+    endDate: "2024"
+    score: "9.44/10.0"
+
+work:
+  - company: "JP Morgan Chase"
+    position: "SDE-1"
+    startDate: "2024-07"
+    endDate: "Present"
+    highlights:
+      - "Developed 'Auto Task Creation' workflow using Kafka Pub-Sub to decouple task generation."
+      - "Pioneered Consumer-Driven Bidirectional Contract Testing to prevent integration drift."
+      - "Integrated Dynatrace for observability and executed rightsizing, reducing cloud costs by ~15%."
+      - "Enhanced stability with SmartSpec test suites and executed Spring Boot upgrades."
+
+  - company: "JP Morgan & Chase"
+    position: "Summer Analyst Intern"
+    startDate: "2023-06"
+    endDate: "2023-07"
+    highlights:
+      - "Engineered Data Fetching Service using GraphQL and DAGs."
+      - "Reduced complex query latency from 900ms to 10ms (98% reduction) via node-level caching."
+      - "Built an internal debugging dashboard to reduce root-cause analysis time."
+
+  - company: "Entrepreneurship Development Cell"
+    position: "Tech Lead & Design Head"
+    startDate: "2022"
+    endDate: "2024"
+    highlights:
+      - "Led digital presence for 'Pitchverse', optimizing image assets for faster load speeds."
+      - "Managed a team of 5 designers/developers for marketing assets."
+
+projects:
+  - name: "E-Commerce Backend & Payments"
+    url: "https://github.com/PRAJJWALmehta/WebDev"
+    keywords: ["MERN Stack", "Stripe API", "Redis"]
+    description: "Designed a scalable architecture with JWT auth and normalized MongoDB schemas."
+
+  - name: "Covid-19 X-Ray Pipeline"
+    url: "https://github.com/PRAJJWALmehta/Machine-Learning-"
+    keywords: ["Python", "PyTorch", "ResNet-18"]
+    description: "Built an automated image classification pipeline with data augmentation."
+
+skills:
+  - name: "Languages"
+    keywords: ["Java", "C++", "JavaScript (ES6+)", "Python", "SQL"]
+  - name: "Frameworks"
+    keywords:
+      ["Spring Boot", "React.js", "Node.js", "Express", "NextJS", "GraphQL"]
+  - name: "Infrastructure"
+    keywords: ["Git", "Docker", "AWS (Basics)", "MongoDB", "PostgreSQL"]
+  - name: "Concepts"
+    keywords:
+      ["Data Structures", "Algorithms", "OOP", "REST APIs", "System Design"]
