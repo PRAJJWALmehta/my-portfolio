@@ -1,0 +1,39 @@
+name: Deploy Resume Site (Custom SSG)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "resume.yaml"
+      - "views/**"
+      - "package.json"
+      - "build.js"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies and Build Site
+        run: |
+          npm install
+          npm run build
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
