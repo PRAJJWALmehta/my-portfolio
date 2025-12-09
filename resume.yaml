@@ -56,7 +56,7 @@ projects:
 
   - name: Custom Static Site Generator
     description: Built a custom static site generator from scratch to render this portfolio. Engineered a build pipeline using Node.js to parse YAML data and render EJS templates. Implemented a custom responsive design system with Tailwind CSS, featuring a persistent dark mode toggle and glassmorphism UI.
-    url: https://github.com/PRAJJWALmehta/portfolio
+    url: https://github.com/PRAJJWALmehta/my-portfolio
     keywords:
       - Node.js
       - EJS
