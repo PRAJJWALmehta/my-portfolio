@@ -1,4 +1,4 @@
-name: Deploy Resume Site (Custom SSG)
+name: Build, Generate PDF, and Deploy
 
 on:
   push:
@@ -9,13 +9,14 @@ on:
       - "views/**"
       - "package.json"
       - "build.js"
+      - "views/resume.tex.ejs"
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read
+      contents: write
       pages: write
       id-token: write
 
@@ -32,10 +33,22 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build Site
+      - name: Build Site (HTML + TeX)
         run: npm run build
         env:
           NODE_ENV: production
+
+      - name: Compile LaTeX to PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: resume.tex
+          working_directory: dist
+
+      - name: Commit & Push PDF
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "📄 Auto-generated Resume PDF [skip ci]"
+          file_pattern: "dist/resume.pdf"
 
       - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v3
