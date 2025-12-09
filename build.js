@@ -7,7 +7,7 @@ const path = require("path");
 const fileContents = fs.readFileSync("resume.yaml", "utf8");
 const data = yaml.load(fileContents);
 
-// 2. Setup Directories & Base Config
+// 2. Setup Directories
 const BASE_URL = process.env.NODE_ENV === "production" ? "/my-portfolio/" : "/";
 const outputDir = "dist";
 if (!fs.existsSync(outputDir)) {
@@ -15,21 +15,10 @@ if (!fs.existsSync(outputDir)) {
 }
 
 // ---------------------------------------------------------
-// PHASE A: Generate HTML
+// HELPERS
 // ---------------------------------------------------------
-console.log("📄 Generating HTML...");
-const htmlTemplate = fs.readFileSync("views/template.ejs", "utf8");
-const htmlOutput = ejs.render(htmlTemplate, { ...data, base_url: BASE_URL });
 
-fs.writeFileSync(`${outputDir}/index.html`, htmlOutput);
-fs.copyFileSync("script.js", `${outputDir}/script.js`);
-
-// ---------------------------------------------------------
-// PHASE B: Generate LaTeX (Resume)
-// ---------------------------------------------------------
-console.log("📄 Generating LaTeX...");
-
-// Helper: Escape special LaTeX characters to prevent compile errors
+// Helper: Escape special LaTeX characters
 const escapeLatex = (str) => {
   if (!str) return "";
   return String(str)
@@ -45,15 +34,48 @@ const escapeLatex = (str) => {
     .replace(/\^/g, "\\textasciicircum{}");
 };
 
-// Inject the helper into the data object
-const dataWithHelper = { ...data, escapeLatex };
+// Helper: Format Dates (YYYY-MM -> Month YYYY)
+const formatDate = (dateStr) => {
+  if (!dateStr) return "";
+  // If it says "Present", leave it alone
+  if (dateStr.toLowerCase() === "present") return "Present";
+
+  // Check for YYYY-MM format (e.g. 2024-07)
+  const yyyyMmRegex = /^\d{4}-\d{2}$/;
+  if (yyyyMmRegex.test(dateStr)) {
+    const [year, month] = dateStr.split("-");
+    const date = new Date(parseInt(year), parseInt(month) - 1);
+    return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+  }
+
+  // Fallback: return as-is (handles just "2024")
+  return dateStr;
+};
+
+// Combine data with helpers
+const renderData = { ...data, base_url: BASE_URL, escapeLatex, formatDate };
+
+// ---------------------------------------------------------
+// PHASE A: Generate HTML
+// ---------------------------------------------------------
+console.log("📄 Generating HTML...");
+const htmlTemplate = fs.readFileSync("views/template.ejs", "utf8");
+const htmlOutput = ejs.render(htmlTemplate, renderData); // Use renderData here
+
+fs.writeFileSync(`${outputDir}/index.html`, htmlOutput);
+fs.copyFileSync("script.js", `${outputDir}/script.js`);
+
+// ---------------------------------------------------------
+// PHASE B: Generate LaTeX (Resume)
+// ---------------------------------------------------------
+console.log("📄 Generating LaTeX...");
 
 try {
   const texTemplatePath = path.join("views", "resume.tex.ejs");
-  // Check if template exists before trying to render
   if (fs.existsSync(texTemplatePath)) {
     const texTemplate = fs.readFileSync(texTemplatePath, "utf8");
-    const texOutput = ejs.render(texTemplate, dataWithHelper);
+    // We trim() to ensure no whitespace at the top of the file
+    const texOutput = ejs.render(texTemplate, renderData).trim();
     fs.writeFileSync(`${outputDir}/resume.tex`, texOutput);
     console.log("✅ LaTeX file created at dist/resume.tex");
   } else {

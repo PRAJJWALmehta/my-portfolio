@@ -2,22 +2,17 @@
 \usepackage[utf8]{inputenc}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage[hidelinks]{hyperref} % hidelinks removes the ugly boxes around links
+\usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
 \usepackage{xcolor}
 
 % --- CUSTOM COMMANDS ---
-
-% Section Formatting
 \titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
 
-% Custom Project Heading: Name | Link | Tech Stack
-% Usage: \projectHeading{Name}{Link}{Tech Stack}
 \newcommand{\projectHeading}[3]{
     \textbf{#1} $|$ \href{#2}{\underline{Link}} \hfill \textit{\small #3} \\
 }
 
-% Standard bullet item
 \newcommand{\resumeItem}[1]{\item\small{#1}}
 
 \begin{document}
@@ -29,27 +24,18 @@
     <%- escapeLatex(basics.phone) %> $|$ 
     \href{<%- basics.url %>}{Portfolio}%
     <%_ basics.profiles.forEach(function(profile) { -%>
-        $|$ \href{<%- profile.url %>}{<%- profile.network %>}%
+         $|$ \href{<%- profile.url %>}{<%- profile.network %>}%
     <%_ }); -%>
 \end{center}
 
-% --- EDUCATION ---
-% (Moved up as per your previous resume preference, or swap with Experience if you prefer)
-\section{Education}
-\begin{itemize}[leftmargin=0.15in, label={}]
-    <% education.forEach(edu => { %>
-    \item
-        \textbf{<%- escapeLatex(edu.institution) %>} \hfill <%- escapeLatex(edu.startDate) %> -- <%- escapeLatex(edu.endDate) %> \\
-        <%- escapeLatex(edu.studyType) %> in <%- escapeLatex(edu.area) %> \hfill CGPA: <%- escapeLatex(edu.score) %>
-    <% }) %>
-\end{itemize}
-
-% --- EXPERIENCE ---
+% --- WORK EXPERIENCE (Moved to Top) ---
 \section{Work Experience}
 \begin{itemize}[leftmargin=0.15in, label={}]
     <% work.forEach(job => { %>
     \item
-        \textbf{<%- escapeLatex(job.company) %>} \hfill <%- escapeLatex(job.startDate) %> -- <%- escapeLatex(job.endDate) %> \\
+        \textbf{<%- escapeLatex(job.company) %>} \hfill 
+        % Format the dates here 👇
+        <%- escapeLatex(formatDate(job.startDate)) %> -- <%- escapeLatex(formatDate(job.endDate)) %> \\
         \textit{<%- escapeLatex(job.position) %>}
         \begin{itemize}[leftmargin=0.2in]
             <% if (job.highlights) { %>
@@ -71,21 +57,29 @@
             {<%- escapeLatex(project.url) %>} 
             {<%- project.keywords ? project.keywords.map(k => escapeLatex(k)).join(', ') : '' %>}
             
-        % Inner list: topsep=0pt keeps it tight to the heading
         \begin{itemize}[leftmargin=0.2in, topsep=0pt, partopsep=0pt]
             <% if (project.description) { %>
                 \resumeItem{<%- escapeLatex(project.description) %>}
             <% } %>
-            
             <% if (project.highlights) { %>
                 <% project.highlights.forEach(highlight => { %>
                     \resumeItem{<%- escapeLatex(highlight) %>}
                 <% }) %>
             <% } %>
         \end{itemize}
-        
-        % INCREASED GAP: This ensures distinct projects are separated clearly
         \vspace{8pt} 
+    <% }) %>
+\end{itemize}
+
+% --- EDUCATION (Moved Here) ---
+\section{Education}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    <% education.forEach(edu => { %>
+    \item
+        \textbf{<%- escapeLatex(edu.institution) %>} \hfill 
+        % Format the dates here too 👇
+        <%- escapeLatex(formatDate(edu.startDate)) %> -- <%- escapeLatex(formatDate(edu.endDate)) %> \\
+        <%- escapeLatex(edu.studyType) %> in <%- escapeLatex(edu.area) %> \hfill CGPA: <%- escapeLatex(edu.score) %>
     <% }) %>
 \end{itemize}
 

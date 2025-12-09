@@ -2,22 +2,17 @@
 \usepackage[utf8]{inputenc}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage[hidelinks]{hyperref} % hidelinks removes the ugly boxes around links
+\usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
 \usepackage{xcolor}
 
 % --- CUSTOM COMMANDS ---
-
-% Section Formatting
 \titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
 
-% Custom Project Heading: Name | Link | Tech Stack
-% Usage: \projectHeading{Name}{Link}{Tech Stack}
 \newcommand{\projectHeading}[3]{
     \textbf{#1} $|$ \href{#2}{\underline{Link}} \hfill \textit{\small #3} \\
 }
 
-% Standard bullet item
 \newcommand{\resumeItem}[1]{\item\small{#1}}
 
 \begin{document}
@@ -28,27 +23,18 @@
     \small prajjwalmehta75@gmail.com $|$ 
     +91 8851975249 $|$ 
     \href{https://prajjwalmehta.github.io/my-portfolio/}{Portfolio}%
-        $|$ \href{https://www.linkedin.com/in/prajjwalmehta}{LinkedIn}%
-        $|$ \href{https://github.com/PRAJJWALmehta}{GitHub}%
+         $|$ \href{https://www.linkedin.com/in/prajjwalmehta}{LinkedIn}%
+         $|$ \href{https://github.com/PRAJJWALmehta}{GitHub}%
 \end{center}
 
-% --- EDUCATION ---
-% (Moved up as per your previous resume preference, or swap with Experience if you prefer)
-\section{Education}
-\begin{itemize}[leftmargin=0.15in, label={}]
-    
-    \item
-        \textbf{Thapar Institute of Engineering and Technology} \hfill 2020 -- 2024 \\
-        B.E. in Computer Science \hfill CGPA: 9.44/10.0
-    
-\end{itemize}
-
-% --- EXPERIENCE ---
+% --- WORK EXPERIENCE (Moved to Top) ---
 \section{Work Experience}
 \begin{itemize}[leftmargin=0.15in, label={}]
     
     \item
-        \textbf{JPMorgan Chase} \hfill 2024-07 -- Present \\
+        \textbf{JPMorgan Chase} \hfill 
+        % Format the dates here 👇
+        July 2024 -- Present \\
         \textit{Software Engineer I}
         \begin{itemize}[leftmargin=0.2in]
             
@@ -63,7 +49,9 @@
         \end{itemize}
     
     \item
-        \textbf{JPMorgan Chase} \hfill 2023-06 -- 2023-07 \\
+        \textbf{JPMorgan Chase} \hfill 
+        % Format the dates here 👇
+        June 2023 -- July 2023 \\
         \textit{Summer Analyst Intern}
         \begin{itemize}[leftmargin=0.2in]
             
@@ -78,7 +66,9 @@
         \end{itemize}
     
     \item
-        \textbf{Entrepreneurship Development Cell} \hfill 2022 -- 2024 \\
+        \textbf{Entrepreneurship Development Cell} \hfill 
+        % Format the dates here 👇
+        2022 -- 2024 \\
         \textit{Tech Lead \& Design Head}
         \begin{itemize}[leftmargin=0.2in]
             
@@ -102,16 +92,12 @@
             {https://github.com/PRAJJWALmehta/Machine-Learning-/tree/main/Covid-19\%20detection\%20from\%20X-ray\%20images\%20using\%20ResNet-18} 
             {Python, PyTorch, ResNet-18}
             
-        % Inner list: topsep=0pt keeps it tight to the heading
         \begin{itemize}[leftmargin=0.2in, topsep=0pt, partopsep=0pt]
             
                 \resumeItem{Built an automated image classification pipeline with data augmentation.}
             
             
-            
         \end{itemize}
-        
-        % INCREASED GAP: This ensures distinct projects are separated clearly
         \vspace{8pt} 
     
     \item
@@ -120,17 +106,25 @@
             {https://github.com/PRAJJWALmehta/portfolio} 
             {Node.js, EJS, Tailwind CSS, CI/CD}
             
-        % Inner list: topsep=0pt keeps it tight to the heading
         \begin{itemize}[leftmargin=0.2in, topsep=0pt, partopsep=0pt]
             
                 \resumeItem{Built a custom static site generator from scratch to render this portfolio. Engineered a build pipeline using Node.js to parse YAML data and render EJS templates. Implemented a custom responsive design system with Tailwind CSS, featuring a persistent dark mode toggle and glassmorphism UI.}
             
             
-            
         \end{itemize}
-        
-        % INCREASED GAP: This ensures distinct projects are separated clearly
         \vspace{8pt} 
+    
+\end{itemize}
+
+% --- EDUCATION (Moved Here) ---
+\section{Education}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    
+    \item
+        \textbf{Thapar Institute of Engineering and Technology} \hfill 
+        % Format the dates here too 👇
+        2020 -- 2024 \\
+        B.E. in Computer Science \hfill CGPA: 9.44/10.0
     
 \end{itemize}
 
