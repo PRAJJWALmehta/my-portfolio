@@ -41,14 +41,14 @@ jobs:
       - name: Compile LaTeX to PDF
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: resume.tex
+          root_file: prajjwal_mehta_resume.tex
           working_directory: dist
 
       - name: Commit & Push PDF
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "📄 Auto-generated Resume PDF [skip ci]"
-          file_pattern: "dist/resume.pdf"
+          file_pattern: "dist/prajjwal_mehta_resume.pdf"
 
       - name: Upload Build Artifacts
         uses: actions/upload-pages-artifact@v3
