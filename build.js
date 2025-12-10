@@ -10,7 +10,7 @@ const fileContents = fs.readFileSync("resume.yaml", "utf8");
 const data = yaml.load(fileContents);
 
 // 2. Setup Directories
-const BASE_URL = process.env.NODE_ENV === "production" ? "/my-portfolio/" : "/";
+const BASE_URL = process.env.BASE_URL || "/my-portfolio/";
 const outputDir = "dist";
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });

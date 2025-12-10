@@ -1,19 +1,24 @@
-name: Build, Generate PDF, and Deploy
+name: Build, Deploy Site & Sync Resume
 
 on:
   push:
     branches:
       - main
+      - develop
     paths:
       - "resume.yaml"
       - "views/**"
       - "package.json"
       - "build.js"
-      - "views/resume.tex.ejs"
+      - ".github/workflows/deploy.yml"
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'Production' || 'Development' }}
+      url: ${{ steps.deployment.outputs.page_url }}
 
     permissions:
       contents: write
@@ -35,16 +40,49 @@ jobs:
 
       - name: Build Site (HTML + TeX)
         run: npm run build
-        env:
-          NODE_ENV: production
+        # Note: We don't need to pass NODE_ENV anymore because
+        # GitHub automatically loads the 'BASE_URL' variable from the Environment we selected above!
 
+      # -------------------------------------------------------
+      # 1. Compile LaTeX to PDF
+      # -------------------------------------------------------
       - name: Compile LaTeX to PDF
         uses: xu-cheng/latex-action@v3
         with:
           root_file: prajjwal_mehta_resume.tex
           working_directory: dist
 
-      - name: Commit & Push PDF
+      # -------------------------------------------------------
+      # 2. Push PDF/TeX to EXTERNAL Profile Repo (ONLY ON MAIN)
+      # -------------------------------------------------------
+      - name: Push Resume to Profile Repo
+        if: github.ref == 'refs/heads/main'
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+          USER_EMAIL: "prajjwalmehta75@gmail.com"
+          USER_NAME: "PRAJJWALmehta"
+          TARGET_REPO: "PRAJJWALmehta/PRAJJWALmehta"
+        run: |
+          echo "Cloning target repository..."
+          git clone https://x-access-token:$API_TOKEN_GITHUB@github.com/$TARGET_REPO.git profile-repo
+
+          echo "Copying resume files..."
+          cp dist/prajjwal_mehta_resume.pdf profile-repo/prajjwal_mehta_resume.pdf
+          cp dist/prajjwal_mehta_resume.tex profile-repo/prajjwal_mehta_resume.tex
+
+          echo "Pushing changes..."
+          cd profile-repo
+          git config user.name "$USER_NAME"
+          git config user.email "$USER_EMAIL"
+          git add prajjwal_mehta_resume.pdf prajjwal_mehta_resume.tex
+          git commit -m "Update Resume (Auto-generated from Portfolio)" || echo "No changes to resume"
+          git push
+
+      # -------------------------------------------------------
+      # 3. Continue with Site Deployment
+      # -------------------------------------------------------
+
+      - name: Commit Local PDF
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "📄 Auto-generated Resume PDF [skip ci]"
