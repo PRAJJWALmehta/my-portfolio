@@ -4,7 +4,7 @@ A high-performance, custom-built Static Site Generator used to build my personal
 
 Unlike standard templates, this project is engineered from scratch using **Node.js** to decouple content (YAML) from presentation (EJS/Tailwind). It features a fully responsive design, a custom dark mode engine, and an automated build pipeline.
 
-**🔗 Live Demo:** [https://prajjwalmehta.github.io/portfolio/](https://prajjwalmehta.github.io/portfolio/)
+**🔗 Live Demo:** [https://prajjwalmehta.github.io/portfolio/](https://prajjwalmehta.github.io/my-portfolio/)
 
 ## 🚀 Key Features
 
