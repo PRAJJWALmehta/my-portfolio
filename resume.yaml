@@ -79,6 +79,5 @@ skills:
       ]
   - name: "Infrastructure"
     keywords: ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL"]
-  - name: "Concepts"
-    keywords:
-      ["Data Structures", "Algorithms", "OOP", "REST APIs", "System Design"]
+  - name: "Certifications"
+    keywords: ["AWS Cloud Practitioner", "AWS Developer Associate"]
