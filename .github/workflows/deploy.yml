@@ -40,6 +40,8 @@ jobs:
 
       - name: Build Site (HTML + TeX)
         run: npm run build
+        env:
+          BASE_URL: ${{ vars.BASE_URL }}
         # Note: We don't need to pass NODE_ENV anymore because
         # GitHub automatically loads the 'BASE_URL' variable from the Environment we selected above!
 
